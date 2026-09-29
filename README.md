@@ -36,5 +36,5 @@ Easy OLED projesinin kaynak kodları, donanım şemaları ve test yazılımları
 ### 🇬🇧 Project Status: Under Construction
 The source codes, hardware schematics, and test software for the Easy OLED project are currently under active development. The initial stable release and all related files will be fully available in this repository within **1-2 weeks**.
 
-* 📖 In the meantime, you can visit our [Wiki](https://github.com) page to review the technical specifications.
+* 📖 In the meantime, you can visit our [Wiki](https://github.com/Easyoled/easyoled/wiki) page to review the technical specifications.
 * 🚀 You can use the **"Watch"** button in the upper right corner to be notified when the first release is published.
