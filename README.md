@@ -28,7 +28,7 @@ Here are some ideas to get you started:
 ### 🇹🇷 Proje Durumu: Geliştirme Aşamasında
 Easy OLED projesinin kaynak kodları, donanım şemaları ve test yazılımları şu anda aktif olarak düzenlenmektedir. Projenin ilk kararlı sürümü ve tüm dosyaları **1-2 hafta içerisinde** bu depoda (repository) tamamen hazır olacaktır.
 
-* 📖 Bu süreçte projenin teknik detaylarını incelemek için [Wiki](https://github.com) sayfamızı ziyaret edebilirsiniz.
+* 📖 Bu süreçte projenin teknik detaylarını incelemek için [Wiki](https://github.com/Easyoled/easyoled/wiki) sayfamızı ziyaret edebilirsiniz.
 * 🚀 İlk sürüm yayınlandığında haberdar olmak için sağ üstteki **"Watch"** butonunu kullanabilirsiniz.
 
 ---
