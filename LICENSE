@@ -1,13 +1,137 @@
-# LICENSE
+# License
 
-This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License.
+**Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**
 
-### You are free to:
-* **Share** — copy and redistribute the material in any medium or format.
-* **Adapt** — remix, transform, and build upon the material.
+Copyright (c) 2026 Şafak Ağustoslu, Tanalp Ağustoslu
 
-### Under the following terms:
-* **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
-* **NonCommercial** — You may not use the material for commercial purposes.
+EasyOLED is licensed under the Creative Commons Attribution-NonCommercial
+4.0 International License. You are free to use, modify, and share this
+project for non-commercial purposes, under the conditions described below.
 
-To view a copy of this license, visit [Creative Commons CC BY-NC 4.0](https://creativecommons.org).
+---
+
+## You are free to:
+
+- **Share** — copy and redistribute the material in any medium or format.
+- **Adapt** — remix, transform, and build upon the material.
+
+The licensor cannot revoke these freedoms as long as you follow the
+license terms.
+
+## Under the following terms:
+
+- **Attribution** — You must give appropriate credit, provide a link to
+  the license, and indicate if changes were made. You may do so in any
+  reasonable manner, but not in any way that suggests the licensor
+  endorses you or your use.
+
+- **NonCommercial** — You may not use the material for commercial
+  purposes.
+
+- **No additional restrictions** — You may not apply legal terms or
+  technological measures that legally restrict others from doing anything
+  the license permits.
+
+## Notices:
+
+You do not have to comply with the license for elements of the material
+in the public domain or where your use is permitted by an applicable
+exception or limitation.
+
+No warranties are given. The license may not give you all of the
+permissions necessary for your intended use. For example, other rights
+such as publicity, privacy, or moral rights may limit how you use the
+material.
+
+---
+
+## Warranty Disclaimer
+
+**THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED**, including but not limited to the warranties of
+merchantability, fitness for a particular purpose, and non-infringement.
+
+EasyOLED is a free, open-source hobbyist project developed by individual
+developers. It has been tested on a limited number of devices and
+configurations, but **no guarantee is made** that it will work correctly
+on every Android device, every Arduino board, or every Bluetooth module.
+
+This includes, but is not limited to:
+
+- Correct operation on all Android versions (6.0 and above)
+- Compatibility with all Bluetooth (HC-05 / HC-06 / HC-08) modules
+- Correct behavior under all network conditions
+- Freedom from errors, bugs, crashes, or data loss
+- Fitness for a particular purpose
+
+**You use EasyOLED entirely at your own risk.**
+
+## Limitation of Liability
+
+**IN NO EVENT SHALL THE AUTHORS, DEVELOPERS, OR CONTRIBUTORS OF EASYOLED
+BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY**, whether in an
+action of contract, tort, or otherwise, arising from, out of, or in
+connection with the software or the use or other dealings in the software.
+
+This includes, without limitation:
+
+- **Device issues** — Any malfunction, overheating, battery drain, or
+  performance degradation of the phone or Arduino board
+- **Data loss** — Deletion, corruption, or loss of scenes, images,
+  fonts, or any other files stored by the application
+- **Interaction with other apps** — Conflicts, force-closes, or
+  interference with other installed applications
+- **Wireless connection issues** — Bluetooth pairing failures,
+  connection drops, or interference with other wireless devices
+- **Physical damage** — Any damage to connected hardware, sensors,
+  motors, or external components
+- **Indirect damages** — Loss of profit, business interruption, or any
+  consequential damages
+
+**The user is solely responsible for how the application is used**,
+including any decisions made based on data displayed by the application,
+any commands sent to connected hardware, and any consequences that may
+arise from such use.
+
+---
+
+## Full License Text
+
+To view the full legal text of this license, visit:
+
+https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+A human-readable summary is available at:
+
+https://creativecommons.org/licenses/by-nc/4.0/
+
+---
+
+## Commercial Use
+
+Commercial use is **not permitted** under this license. If you wish to
+use EasyOLED commercially, please contact us to discuss a separate
+licensing agreement:
+
+📧 **easyoledproject@gmail.com**
+
+---
+
+## Attribution Example
+
+If you use EasyOLED in your own project, a suitable attribution could be:
+
+```
+This project uses EasyOLED (https://github.com/Easyoled/easyoled)
+License: CC BY-NC 4.0
+Authors: Şafak Ağustoslu, Tanalp Ağustoslu
+```
+
+---
+
+## Contact
+
+- **Project Homepage:** https://github.com/Easyoled/easyoled
+- **Documentation:** https://github.com/Easyoled/easyoled/wiki
+- **Issues & Bug Reports:** https://github.com/Easyoled/easyoled/issues
+- **Email:** easyoledproject@gmail.com
