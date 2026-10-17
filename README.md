@@ -71,7 +71,17 @@ getirir.
 - 🛡️ **SAF-aware SAVE_SCENE** — Android 10+ scoped storage uyumlu
 - ✅ **ACK desteği** — `UPDATE`, `DEL`, `MP_*` gibi kritik komutlara onay
 
+### 🎨 Tasarım Aracı — EasyOLED Design
+
+EasyOLED panelini **PC'de sürükle-bırak** ile tasarla. Arduino'da **kütüphane gerekmez** — tasarım Design'da, veri Arduino'dan `UPDATE`/`SETSTATE` ile gelir.
+
+[**📥 EasyOLED Design İndir (Windows)**](https://github.com/Easyoled/easyoled/releases/tag/easyoled_design) ·
+[**📖 Kullanım Kılavuzu**](https://github.com/Easyoled/easyoled/wiki/EasyOLED-Design)
+
+> 💡 **Neden Design?** Arduino UNO'nun 2 KB RAM'i bile yeterli — çünkü hiçbir görsel veri Arduino'da tutulmaz. Tüm çizim telefondadır.
+
 ### 🚀 EasyOLED Hızlı Kurulum
+
 
 **1. APK'yı indir**
 
