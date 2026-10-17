@@ -75,8 +75,8 @@ getirir.
 
 EasyOLED panelini **PC'de sürükle-bırak** ile tasarla. Arduino'da **kütüphane gerekmez** — tasarım Design'da, veri Arduino'dan `UPDATE`/`SETSTATE` ile gelir.
 
-[**📥 EasyOLED Design İndir (Windows)**](https://github.com/Easyoled/easyoled/releases/tag/easyoled_design) ·
-[**📖 Kullanım Kılavuzu**](https://github.com/Easyoled/easyoled/wiki/EasyOLED-Design)
+[**📥 EasyOLED Design İndir (Windows)**](https://github.com/Easyoled/easyoled/releases/tag/EasyOLED_Design) ·
+[**📖 Kullanım Kılavuzu**](https://github.com/Easyoled/easyoled/wiki/EasyOLED‐Design)
 
 > 💡 **Neden Design?** Arduino UNO'nun 2 KB RAM'i bile yeterli — çünkü hiçbir görsel veri Arduino'da tutulmaz. Tüm çizim telefondadır.
 
