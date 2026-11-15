@@ -40,7 +40,7 @@ getirir.
 - **Bluetooth (HC-05)** veya **USB-OTG (FT232RL/CH340/CP2102)** üzerinden Arduino'ya bağlanır
 - Gelen komutları ekrana çizer (`TEXT,1,Merhaba,50,100,32`)
 - Kullanıcı etkileşimlerini Arduino'ya geri gönderir (`BTN_CLICK`, `SLIDER_CHANGE`)
-- 30+ hazır nesne: Gauge, Slider, POT, Encoder, SegmentBar, Needle, Image, GIF, Button, ListBox, ComboBox, QRCode, MediaPlayer...
+- **40+ hazır nesne:** Gauge, Slider, POT, Encoder, SegmentBar, Needle, Liquid, Image, GIF, Button, ListBox, **ListBoxR**, ComboBox, QRCode, Matrix, MediaPlayer...
 - **Mark Dirty Render** ile sadece değişen bölge yeniden çizilir → yüksek performans
 - **SAVE_SCENE** ile tasarımı JSON'a kaydet, geri yükle
 - **LINKS** komutuyla Arduino adına HTTPS isteği yap (ESP8266'nın yapamadığı)
@@ -50,26 +50,45 @@ getirir.
 - **MediaStore müzik** — cihazdaki tüm müzikleri dizin bağımsız listeler
 - **Modüler müzik kontrolü** — `MP_PLAY`, `MP_STOP`, `MP_NEXT`, `MP_VOL_UP`... (Arduino'dan uzaktan)
 - **SAF uyumu** — Android 10+ scoped storage ile uyumlu (Storage Access Framework)
+- **TTS** — Türkçe/İngilizce sayı okuma, dil-farkında şablonlar
+- **Parmak izi** doğrulama (BiometricPrompt)
+- **Bluetooth Gateway** — Birden çok BLE/Classic cihaz yönetimi
 
-### 🆕 v3.5'te Ne Yeni?
+### 🆕 v3.6'da Ne Yeni?
 
-**Bağlantı**
-- 🔌 **USB-OTG desteği** — Bluetooth'a alternatif olarak FT232RL/CH340/CP2102 ile kablolu bağlantı
-- 📶 **Bluetooth kapalı uyarısı** — açmak ister misiniz dialog + sistem izni
-- 🌐 **WiFi kontrolü** — `LINKS`/`WEATHER` öncesi otomatik ağ kontrolü
+**🐛 Kritik Hata Düzeltmesi**
+- ✅ **Timer'lı nesnelerin ListBox ailesini bozması** kökünden giderildi. ScrollText / DCLOCK / GIF eklendiğinde `LISTBOX`, `LISTBOXR` ve `COMBOBOX` metinleri sağdan kırpılıyordu — artık hiçbir koşulda bozulmuyor.
 
-**Yeni Yetenekler**
-- 🌡️ **Telefon sensörleri** — 9 tür; tek seferde bir sensör, `SENSOR_START`/`STOP`
-- 🎵 **MediaPlayer modüler kontrol** — `MP_MODE`, `MP_PLAY`, `MP_PAUSE`, `MP_STOP`, `MP_NEXT`, `MP_PREV`, `MP_VOL_UP`, `MP_VOL_DOWN`, `MP_MUTE`, `MP_STATUS`
-- 💾 **MediaStore müzik listeleme** — dizin taraması yok, Music/ klasörü zorunlu değil
-- 🖼️ **Image yuvarlak modu** — `shape=1` parametresi (x,y=merkez, width=çap)
-- ⚡ **GIF hız kontrolü** — `speed` parametresi (0.25x – 4.0x)
+**✨ Yeni Nesneler**
+- 📋 **LISTBOXR** — İkonlu + alt başlıklı + aksiyonlu zengin liste (sabit ikon slotu, satır aksiyonları)
+- 🎯 **NEEDLE** — Kadran üstünde dönen ibre (smooth easing + auto-rotate)
+- 🌊 **LIQUID** — Dalgalı sıvı seviye göstergesi (3 şekil: rect / circle / flask)
+- 🔲 **MATRIX** — LED dot-matrix panel (3 ayrı komut: `MATRIX_SETUP`, `MATRIX_TEXT`, `MATRIX_STRING`)
 
-**Performans & Uyumluluk**
-- 🚀 **Sayfa bazlı render optimizasyonu** — pasif sayfadaki nesneler çizilmez
-- 📂 **Menüden sahne restore** — 0-9 slot listesi, tarih/boyut ile
-- 🛡️ **SAF-aware SAVE_SCENE** — Android 10+ scoped storage uyumlu
-- ✅ **ACK desteği** — `UPDATE`, `DEL`, `MP_*` gibi kritik komutlara onay
+**🆕 Yeni Komutlar**
+- 🔐 **Parmak izi:** `FP_VERIFY`, `FP_STATUS`, `FP_CANCEL` (BiometricPrompt)
+- 📡 **Bluetooth Gateway:** `BL_READ_ALL`, `BL_READ`, `BL_SEND`, `BL_TIMER`, `BL_LIST`, `BL_STATUS`
+- ⏰ **Sistem:** `GET_TIME`, `BT_STATUS`, `BT_SEND`
+- 🌤️ **Weather:** `WEATHER_STOP`
+- 🎚️ **VU:** `VU_GAIN`
+
+**🔧 Nesne İyileştirmeleri**
+- 📏 **LINE** — `pivotRatio` + `autoRotate` + `rotateSpeed` + `rotateDirection`
+- 🖼️ **IMAGE** — `autoRotate` desteği
+- 📊 **RULER / GAUGE / PROGRESS** — Gradient + `warningVal` + `criticalVal`
+- 🔘 **SWITCH** — `imgOn` / `imgOff` görselli mod
+- ⚙️ **ENCODER** — `borderColor`, `tickColor`, `centerDotColor`
+- 📋 **LISTBOX** — `rowSpacing`, `showBorder`, `cornerRadius`
+- 📝 **TEXT** — `\n` çok satırlı metin auto-box (kutu gerçek yüksekliğe göre)
+
+**🎨 Render Düzeltmeleri**
+- ⏰ **DCLOCK** — Font-farkında dirty rect (saniye/dakika/saat hepsi tazelenir)
+- 🌡️ **THERM** — Bulb render artıkları giderildi
+- 📋 **LISTBOXR** — Sabit ikon slotu (tüm satırlar aynı hizada)
+
+**🗣️ TTS İyileştirmeleri**
+- 🔢 **Sayı okuma:** "192" → "yüz doksan iki" (önceden "bir dokuz iki")
+- 🌐 **Dil-farkında:** TR/EN menü seçimine otomatik uyum
 
 ### 🎨 Tasarım Aracı — EasyOLED Design
 
@@ -82,13 +101,13 @@ EasyOLED panelini **PC'de sürükle-bırak** ile tasarla. Arduino'da **kütüpha
 
 ### 🚀 EasyOLED Hızlı Kurulum
 
-
 **1. APK'yı indir**
 
 [**⬇️ En Son Sürümü İndir**](https://github.com/Easyoled/easyoled/releases/latest)
 
-- Dosya: `EasyOLED-v3.5.0.apk` (~19 MB)
+- Dosya: `EASYOLED_3_6_0.apk` (~22 MB)
 - Gereksinim: Android 6.0 (Marshmallow) ve üzeri
+- Yükseltme: v3.5.x üzerine doğrudan kurulabilir — sahneler ve tercihler korunur
 
 **2. Arduino'ya bağla**
 
@@ -110,17 +129,21 @@ void setup() {
   bt.println("TEXT,1,Merhaba EasyOLED,50,100,32,#FFFFFF,LEFT");
   bt.println("BTN,2,BaSS_la,50,200,150,50,#00AA00,#FFFFFF,20");
 
-  // 🆕 v3.5: MP3 kontrolü
-  bt.println("MEDIAPLAYER,201,300,300,120,120,#FF0000,#333333,0,0");
-  bt.println("MP_MODE,201,0");     // MP3 modu
-  bt.println("MP_PLAY,201");       // Çalmaya başla
+  // 🆕 v3.6: Gradient gauge
+  bt.println("GAUGE,10,540,500,300,0,100,70,95,#00FF00,#FFFF00,#FFFFFF,50,135,270,1,0,0,90,#FF0000,1,#00FF00,#FFFF00,#FF0000");
 
-  // 🆕 v3.5: Işık sensörü
-  bt.println("SENSOR_START,light,500");   // 500ms'de bir ışık değeri
+  // 🆕 v3.6: Çok satırlı TEXT (auto-box)
+  bt.println("TEXT,20,Sicaklik: 25\\u00B0C\\nNem: 65%\\nBasinc: 1013 hPa,100,100,28,#FFFFFF,CENTER,1,1,TRANSPARENT,1.0,0,0,0,0,TRANSPARENT,2,0,8,,1.0,0,0");
+
+  // 🆕 v3.6: LED Matrix
+  bt.println("MATRIX_TEXT,30,100,600,8,32,16,0.05,#00FF00,#000000,#333333,MERHABA");
+
+  // 🆕 v3.6: Zengin liste
+  bt.println("LISTBOXR,40,50,800,800,600,0,#000000,#FFFFFF,#808080,#FF00FF,32,1,12,15,20,#333333,music.png|Radyo|Favoriler|PAGE,3,settings.png|Ayarlar|Sistem|PAGE,5");
 }
 ```
 
-**Sonuç:** Ekranda "Merhaba EasyOLED" yazısı + yeşil buton + müzik player + ışık sensörü verisi görünür.
+**Sonuç:** Ekranda "Merhaba EasyOLED" yazısı + yeşil buton + gradient gauge + çok satırlı metin + LED matrix + zengin liste görünür.
 
 📖 **Detaylı adımlar:** [Quick Start Wiki](https://github.com/Easyoled/easyoled/wiki/Quick-Start)
 
@@ -246,14 +269,15 @@ Tam dokümantasyon **[Wiki](https://github.com/Easyoled/easyoled/wiki)** sayfas�
 | [**Installation**](https://github.com/Easyoled/easyoled/wiki/Installation) | APK kurulumu, izinler, klasör yapısı |
 | [**Quick Start**](https://github.com/Easyoled/easyoled/wiki/Quick-Start) | 5 dakikada ilk panel |
 | [**Python Setup**](https://github.com/Easyoled/easyoled/wiki/Python-Setup) | Python araçları için ortam kurulumu |
-| [**Objects**](https://github.com/Easyoled/easyoled/wiki/Objects) | 30+ nesnenin tüm parametreleri |
-| [**Controls**](https://github.com/Easyoled/easyoled/wiki/Controls) | UPDATE, SETSTATE, LINK, TIMER, LINKS, MP_*, SENSOR_* |
+| [**Objects**](https://github.com/Easyoled/easyoled/wiki/Objects) | 40+ nesnenin tüm parametreleri |
+| [**Controls**](https://github.com/Easyoled/easyoled/wiki/Controls) | UPDATE, SETSTATE, LINK, TIMER, LINKS, MP_*, SENSOR_*, FP_*, BL_* |
 | [**Events**](https://github.com/Easyoled/easyoled/wiki/Events) | Arduino'ya gönderilen tüm mesajlar |
-| [**Special Characters**](https://github.com/Easyoled/easyoled/wiki/Special-Characters) | Türkçe, emoji, sembol kodlama |
+| [**Special Characters**](https://github.com/Easyoled/easyoled/wiki/Special-Characters) | Türkçe, emoji, sembol kodlama, `\n` çok satırlı |
 | [**Advanced Features**](https://github.com/Easyoled/easyoled/wiki/Advanced-Features) | GROUP, ICON, LINK, TIMER detaylı |
 | [**Examples**](https://github.com/Easyoled/easyoled/wiki/Examples) | 5 hazır senaryo |
 | [**Troubleshooting**](https://github.com/Easyoled/easyoled/wiki/Troubleshooting) | Yaygın hatalar ve çözümleri |
 | [**FAQ**](https://github.com/Easyoled/easyoled/wiki/FAQ) | Sık sorulan sorular |
+| [**Changelog**](https://github.com/Easyoled/easyoled/wiki/Changelog) | Sürüm geçmişi |
 
 ### EasyLCD Mobile Wiki Sayfaları
 
@@ -278,6 +302,8 @@ Aşağıdaki adımları **sırayla** dene. Çoğu sorun bu aşamalarda çözül�
 | Komutlar çalışmıyor | [Troubleshooting](https://github.com/Easyoled/easyoled/wiki/Troubleshooting) |
 | Bluetooth / USB bağlanmıyor | [Troubleshooting](https://github.com/Easyoled/easyoled/wiki/Troubleshooting) |
 | Türkçe karakterler bozuk | [Special Characters](https://github.com/Easyoled/easyoled/wiki/Special-Characters) |
+| Çok satırlı TEXT çalışmıyor | [Special Characters — `\n`](https://github.com/Easyoled/easyoled/wiki/Special-Characters) |
+| ListBox text kırpılıyor | [Changelog — v3.6 timer pollution fix](https://github.com/Easyoled/easyoled/wiki/Changelog) |
 | Müzik listesi boş görünüyor | [FAQ — MediaStore](https://github.com/Easyoled/easyoled/wiki/FAQ) |
 | Sensör verisi gelmiyor | [FAQ — Sensörler](https://github.com/Easyoled/easyoled/wiki/FAQ) |
 | Python kütüphanesi eksik | [Python Setup](https://github.com/Easyoled/easyoled/wiki/Python-Setup) |
@@ -379,8 +405,9 @@ EasyOLED / EasyLCD Mobile açık kaynaklı projelerdir. Katkı sağlamak isterse
 operator panel** for Arduino / ESP via simple serial commands.
 
 - Connects via **Bluetooth (HC-05)** or **USB-OTG (FT232RL/CH340/CP2102)**
-- Renders 30+ object types: Gauge, Slider, POT, Encoder, SegmentBar,
-  Needle, Image, GIF, Button, ListBox, QRCode, MediaPlayer...
+- Renders **40+ object types:** Gauge, Slider, POT, Encoder, SegmentBar,
+  Needle, Liquid, Image, GIF, Button, ListBox, **ListBoxR**, ComboBox,
+  QRCode, Matrix, MediaPlayer...
 - **Mark Dirty Render** — only redraws changed regions
 - **SAVE_SCENE** — persist design to JSON
 - **LINKS** command — HTTPS requests on behalf of Arduino
@@ -389,30 +416,51 @@ operator panel** for Arduino / ESP via simple serial commands.
 - **MediaStore music** — lists all music device-wide, folder-independent
 - **Modular music control** — `MP_PLAY`, `MP_STOP`, `MP_NEXT`, `MP_VOL_UP`...
 - **SAF-aware** — Android 10+ scoped storage compatible
+- **TTS** — Turkish/English number reading, language-aware templates
+- **Fingerprint** verification (BiometricPrompt)
+- **Bluetooth Gateway** — multi BLE/Classic device management
 
-### 🆕 What's New in v3.5?
+### 🆕 What's New in v3.6?
 
-**Connection**
-- 🔌 **USB-OTG support** — wired alternative to Bluetooth
-- 📶 **Bluetooth off warning** — enable dialog + system permission
-- 🌐 **WiFi check** — automatic network validation before `LINKS`/`WEATHER`
+**🐛 Critical Bug Fix**
+- ✅ **Timer-driven objects breaking ListBox family** fixed at root. ScrollText / DCLOCK / GIF insertion caused `LISTBOX`, `LISTBOXR`, `COMBOBOX` text to clip from the right — now impossible under any condition.
 
-**New Capabilities**
-- 🌡️ **Phone sensors** — 9 types; one at a time, `SENSOR_START`/`STOP`
-- 🎵 **Modular MediaPlayer** — `MP_MODE`, `MP_PLAY`, `MP_PAUSE`, `MP_STOP`, `MP_NEXT`, `MP_PREV`, `MP_VOL_UP`, `MP_VOL_DOWN`, `MP_MUTE`, `MP_STATUS`
-- 💾 **MediaStore music listing** — no directory scan, no Music/ requirement
-- 🖼️ **Image circular mode** — `shape=1` (x,y=center, width=diameter)
-- ⚡ **GIF speed control** — `speed` param (0.25x – 4.0x)
+**✨ New Objects**
+- 📋 **LISTBOXR** — Rich list with icon + subtitle + action (fixed icon slot, per-row actions)
+- 🎯 **NEEDLE** — Rotating needle over dial (smooth easing + auto-rotate)
+- 🌊 **LIQUID** — Animated liquid level (3 shapes: rect / circle / flask)
+- 🔲 **MATRIX** — LED dot-matrix panel (3 commands: `MATRIX_SETUP`, `MATRIX_TEXT`, `MATRIX_STRING`)
 
-**Performance & Compatibility**
-- 🚀 **Page-based render optimization** — inactive pages not drawn
-- 📂 **Restore scene from menu** — 0-9 slot list with date/size
-- 🛡️ **SAF-aware SAVE_SCENE** — Android 10+ scoped storage
-- ✅ **ACK support** — for `UPDATE`, `DEL`, `MP_*` critical commands
+**🆕 New Commands**
+- 🔐 **Fingerprint:** `FP_VERIFY`, `FP_STATUS`, `FP_CANCEL` (BiometricPrompt)
+- 📡 **Bluetooth Gateway:** `BL_READ_ALL`, `BL_READ`, `BL_SEND`, `BL_TIMER`, `BL_LIST`, `BL_STATUS`
+- ⏰ **System:** `GET_TIME`, `BT_STATUS`, `BT_SEND`
+- 🌤️ **Weather:** `WEATHER_STOP`
+- 🎚️ **VU:** `VU_GAIN`
+
+**🔧 Object Improvements**
+- 📏 **LINE** — `pivotRatio` + `autoRotate` + `rotateSpeed` + `rotateDirection`
+- 🖼️ **IMAGE** — `autoRotate` support
+- 📊 **RULER / GAUGE / PROGRESS** — Gradient + `warningVal` + `criticalVal`
+- 🔘 **SWITCH** — `imgOn` / `imgOff` image mode
+- ⚙️ **ENCODER** — `borderColor`, `tickColor`, `centerDotColor`
+- 📋 **LISTBOX** — `rowSpacing`, `showBorder`, `cornerRadius`
+- 📝 **TEXT** — `\n` multi-line auto-box (box grows to actual height)
+
+**🎨 Render Fixes**
+- ⏰ **DCLOCK** — Font-aware dirty rect (second/minute/hour all refreshed)
+- 🌡️ **THERM** — Bulb render artifacts fixed
+- 📋 **LISTBOXR** — Fixed icon slot (all rows aligned)
+
+**🗣️ TTS Improvements**
+- 🔢 **Number reading:** "192" → "one hundred ninety two" (previously "one nine two")
+- 🌐 **Language-aware:** auto-adjusts to TR/EN menu selection
 
 **Download:** [**⬇️ Latest Release**](https://github.com/Easyoled/easyoled/releases/latest)
 
 **Requirements:** Android 6.0+ · HC-05 / HC-06 Bluetooth module OR USB-OTG cable + FT232RL/CH340
+
+**Upgrade:** Direct install over v3.5.x — scenes and preferences preserved
 
 ---
 
@@ -455,8 +503,10 @@ Full docs on the [**Wiki**](https://github.com/Easyoled/easyoled/wiki).
 [Objects](https://github.com/Easyoled/easyoled/wiki/Objects) ·
 [Controls](https://github.com/Easyoled/easyoled/wiki/Controls) ·
 [Events](https://github.com/Easyoled/easyoled/wiki/Events) ·
+[Special Characters](https://github.com/Easyoled/easyoled/wiki/Special-Characters) ·
 [Troubleshooting](https://github.com/Easyoled/easyoled/wiki/Troubleshooting) ·
-[FAQ](https://github.com/Easyoled/easyoled/wiki/FAQ)
+[FAQ](https://github.com/Easyoled/easyoled/wiki/FAQ) ·
+[Changelog](https://github.com/Easyoled/easyoled/wiki/Changelog)
 
 **EasyLCD Mobile pages:**
 [**v1.0 Wiki**](https://github.com/Easyoled/easyoled/wiki/EasyLCD-Mobile) ·
