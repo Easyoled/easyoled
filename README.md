@@ -20,6 +20,18 @@
 
 ---
 
+## 🎬 Tanıtım & Videolar
+
+Projenin **tanıtım yazısı** ve **videoları** — hızlıca göz atmak için:
+
+- 📝 **Mikrobotik Tanıtım Yazısı:** [EASYOLED — Eski Telefonunuz Artık Dokunmatik HMI Ekranı](https://www.mikrobotik.com/wp2/2026/11/21/easyoled-eski-telefonunuz-artik-dokunmatik-hmi-ekrani/)
+- 🎥 **EasyOLED Simülatör Videosu:** [YouTube'da izle](https://youtu.be/NemYqS6B4Yk)
+- 🎥 **EasyOLED Design Videosu:** [YouTube'da izle](https://youtu.be/OMIu9jRUqPQ)
+
+> 💡 Adım adım rehber, bağlantı şemaları ve USB-OTG / FT232RL bağlantı görselleri için Mikrobotik yazısına mutlaka göz atın.
+
+---
+
 ## 📦 Bu Repo İki Proje Barındırır
 
 | Proje | Amaç | Android |
@@ -95,7 +107,8 @@ getirir.
 EasyOLED panelini **PC'de sürükle-bırak** ile tasarla. Arduino'da **kütüphane gerekmez** — tasarım Design'da, veri Arduino'dan `UPDATE`/`SETSTATE` ile gelir.
 
 [**📥 EasyOLED Design İndir (Windows)**](https://github.com/Easyoled/easyoled/releases/tag/EasyOLED_Design) ·
-[**📖 Kullanım Kılavuzu**](https://github.com/Easyoled/easyoled/wiki/EasyOLED‐Design)
+[**📖 Kullanım Kılavuzu**](https://github.com/Easyoled/easyoled/wiki/EasyOLED‐Design) ·
+[**🎥 Tanıtım Videosu**](https://youtu.be/OMIu9jRUqPQ)
 
 > 💡 **Neden Design?** Arduino UNO'nun 2 KB RAM'i bile yeterli — çünkü hiçbir görsel veri Arduino'da tutulmaz. Tüm çizim telefondadır.
 
@@ -146,6 +159,7 @@ void setup() {
 **Sonuç:** Ekranda "Merhaba EasyOLED" yazısı + yeşil buton + gradient gauge + çok satırlı metin + LED matrix + zengin liste görünür.
 
 📖 **Detaylı adımlar:** [Quick Start Wiki](https://github.com/Easyoled/easyoled/wiki/Quick-Start)
+🎥 **Canlı demo:** [EasyOLED Simülatör Videosu](https://youtu.be/NemYqS6B4Yk)
 
 ---
 
@@ -341,6 +355,12 @@ Aşağıdaki adımları **sırayla** dene. Çoğu sorun bu aşamalarda çözül�
 - 🐛 **Issues:** https://github.com/Easyoled/easyoled/issues
 - 💬 **Discussions:** https://github.com/Easyoled/easyoled/discussions
 
+### 🎬 Tanıtım ve Videolar
+
+- 📝 **Mikrobotik Tanıtım Yazısı:** https://www.mikrobotik.com/wp2/2026/11/21/easyoled-eski-telefonunuz-artik-dokunmatik-hmi-ekrani/
+- 🎥 **EasyOLED Simülatör Videosu:** https://youtu.be/NemYqS6B4Yk
+- 🎥 **EasyOLED Design Videosu:** https://youtu.be/OMIu9jRUqPQ
+
 ---
 
 ## 📄 Lisans
@@ -389,6 +409,16 @@ EasyOLED / EasyLCD Mobile açık kaynaklı projelerdir. Katkı sağlamak isterse
 ---
 
 ## 🇬🇧 English
+
+### 🎬 Introduction & Videos
+
+- 📝 **Mikrobotik Introduction Article (Turkish):** [EASYOLED — Your Old Phone Is Now a Touch HMI Screen](https://www.mikrobotik.com/wp2/2026/11/21/easyoled-eski-telefonunuz-artik-dokunmatik-hmi-ekrani/)
+- 🎥 **EasyOLED Simulator Video:** [Watch on YouTube](https://youtu.be/NemYqS6B4Yk)
+- 🎥 **EasyOLED Design Video:** [Watch on YouTube](https://youtu.be/OMIu9jRUqPQ)
+
+> 💡 For step-by-step instructions, wiring diagrams and USB-OTG / FT232RL photos, see the Mikrobotik article above.
+
+---
 
 ### Two Projects in One Repo
 
@@ -520,6 +550,21 @@ Full docs on the [**Wiki**](https://github.com/Easyoled/easyoled/wiki).
 2. Search [**existing Issues**](https://github.com/Easyoled/easyoled/issues)
 3. [**Open a new Issue**](https://github.com/Easyoled/easyoled/issues/new) — mention which project (EasyOLED / EasyLCD v1 / EasyLCD v2)
 4. Still stuck? Email us: 📧 **easyoledproject@gmail.com**
+
+---
+
+### 🔗 Links
+
+- 🏠 **Home:** https://github.com/Easyoled/easyoled
+- 📖 **Wiki:** https://github.com/Easyoled/easyoled/wiki
+- 🚀 **Releases:** https://github.com/Easyoled/easyoled/releases
+- 🐛 **Issues:** https://github.com/Easyoled/easyoled/issues
+- 💬 **Discussions:** https://github.com/Easyoled/easyoled/discussions
+
+**🎬 Intro & Videos:**
+- 📝 [Mikrobotik Article](https://www.mikrobotik.com/wp2/2026/11/21/easyoled-eski-telefonunuz-artik-dokunmatik-hmi-ekrani/)
+- 🎥 [EasyOLED Simulator Video](https://youtu.be/NemYqS6B4Yk)
+- 🎥 [EasyOLED Design Video](https://youtu.be/OMIu9jRUqPQ)
 
 ---
 
